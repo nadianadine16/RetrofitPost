@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Formadd">
+        <TextView
+            android:id="@+id/judul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FORM TAMBAH DATA"
+            android:textColor="#000"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"/>
+        <TextView
+            android:id="@+id/tv_namasiswa"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Siswa :"
+            android:layout_marginBottom="8dp"/>
+        <EditText
+            android:id="@+id/et_namasiswa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukan nama anda"
+            android:layout_marginBottom="15dp"/>
+        <TextView
+            android:id="@+id/tv_alamatsiswa"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Alamat Siswa :"/>
+        <EditText
+            android:id="@+id/et_alamatsiswa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan alamat siswa"
+            android:layout_marginBottom="15dp"/>
+        <TextView
+            android:id="@+id/tv_jktsiswa"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jenis Kelamin Siswa :"
+            android:layout_marginBottom="8dp"/>
+        <EditText
+            android:id="@+id/et_jksiswa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan jenis kelamin anda"
+            android:layout_marginBottom="15dp"/>
+        <TextView
+            android:id="@+id/tv_notelptsiswa"
+            android:layout_width="wrap_content"
+            android:textColor="#000"
+            android:layout_height="wrap_content"
+            android:text="No Telpon Siswa :"
+            android:layout_marginBottom="8dp"/>
+        <EditText
+            android:id="@+id/et_notelpsiswa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan no telpon anda"
+            android:layout_marginBottom="15dp"/>
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:onClick="submit"/>
+</LinearLayout>
