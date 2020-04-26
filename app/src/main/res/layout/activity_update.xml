@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UpdateActivity">
+    <TextView
+        android:id="@+id/judul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UPDATE DATA SISWA"
+        android:textColor="#000"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"/>
+    <TextView
+        android:id="@+id/textid"
+        android:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID Siswa :"
+        android:layout_marginBottom="8dp"/>
+    <EditText
+        android:id="@+id/editid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukan nama anda"
+        android:layout_marginBottom="15dp"/>
+    <TextView
+        android:id="@+id/textnama"
+        android:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Siswa :"
+        android:layout_marginBottom="8dp"/>
+    <EditText
+        android:id="@+id/editnama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukan nama anda yang baru"
+        android:layout_marginBottom="15dp"/>
+    <TextView
+        android:id="@+id/textalamat"
+        android:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Alamat Siswa :"/>
+    <EditText
+        android:id="@+id/editalamat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan alamat siswa yang baru"
+        android:layout_marginBottom="15dp"/>
+    <TextView
+        android:id="@+id/textjk"
+        android:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jenis Kelamin Siswa :"
+        android:layout_marginBottom="8dp"/>
+    <EditText
+        android:id="@+id/editjk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan jenis kelamin anda yang baru"
+        android:layout_marginBottom="15dp"/>
+    <TextView
+        android:id="@+id/texttelp"
+        android:layout_width="wrap_content"
+        android:textColor="#000"
+        android:layout_height="wrap_content"
+        android:text="No Telpon Siswa :"
+        android:layout_marginBottom="8dp"/>
+    <EditText
+        android:id="@+id/edittelp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan no telpon anda yang baru"
+        android:layout_marginBottom="15dp"/>
+    <Button
+        android:id="@+id/btnupdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        />
+
+</LinearLayout>

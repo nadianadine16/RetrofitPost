@@ -6,6 +6,16 @@ public class Post {
     private String alamat;
     private String jenis_kelamin;
 
+    public Post(String id_siswa, String nama, String alamat, String jenis_kelamin, String no_telp) {
+        this.id_siswa = id_siswa;
+        this.nama = nama;
+        this.alamat = alamat;
+        this.jenis_kelamin = jenis_kelamin;
+        this.no_telp = no_telp;
+    }
+
+
+
     public Post(String nama, String alamat, String jenis_kelamin, String no_telp) {
         this.nama = nama;
         this.alamat = alamat;

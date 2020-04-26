@@ -21,40 +21,40 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     TextView textViewResult;
+    private SiswaAdapter adapter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final RecyclerView result = findViewById(R.id.text_view_result);
+//        textViewResult = findViewById(R.id.text_view_result);
+
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://retrofitnadianadine.000webhostapp.com/Api/")
+                .baseUrl("http://192.168.1.12/mahasiswa/Api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        JsonPlaceHolderApi jsonPlaceHolderApi=retrofit.create(JsonPlaceHolderApi.class);
-        Call<List<Post>> call = jsonPlaceHolderApi.getPost();
+
+        JsonPlaceHolderApi jsonPlaceHolderAPI = retrofit.create(JsonPlaceHolderApi.class);
+        Call<List<Post>> call = jsonPlaceHolderAPI.getPost();
         call.enqueue(new Callback<List<Post>>() {
             @Override
             public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
-//                if(!response.isSuccessful()){
-//                    textViewResult.setText("Code " + response.code());
-//                    return;
-//                }
-                List<Post> posts = response.body();
-                String content="";
-                for(Post post:posts){
-                    content+="id_siswa : "+post.getId_siswa()+"\n";
-                    content+="nama : "+post.getNama()+"\n";
-                    content+="alamat : "+post.getAlamat()+"\n";
-                    content+="jenis_kelamin : "+post.getJenis_kelamin()+"\n";
-                    content+="no_telp : "+post.getNo_telp()+"\n";
-                }
-                SiswaAdapter adapter = new SiswaAdapter(posts);
-                result.setAdapter(adapter);
+                generateDataList(response.body());
+                //if (!response.isSuccessful()){
+                //    textViewResult.setText("Code "+response.code());
+                //    return;
+                //}
+                //List<Post> posts=response.body();
+                //String content="";
+                //for (Post post:posts){
 
-                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
-                result.setLayoutManager(layoutManager);
-//                textViewResult.setText(content);
+                //   content+="ID Siswa :"+post.getId_siswa()+"\n";
+                //   content+="Nama :"+post.getNama()+"\n";
+                //   content+="Alamat :"+post.getAlamat()+"\n";
+                //   content+="Jenis Kelamin :"+post.getJenis_kelamin()+"\n";
+                //   content+="No Telp. :"+post.getNo_telp()+"\n\n";
+                //}
             }
 
             @Override
@@ -67,5 +67,15 @@ public class MainActivity extends AppCompatActivity {
     public void tambah(View view) {
         Intent i = new Intent(MainActivity.this,Formadd.class);
         startActivity(i);
+    }
+    private void generateDataList(List<Post> dataList) {
+        recyclerView = findViewById(R.id.text_view_result);
+        //membuat adapter dan menampilkan list datanya
+        adapter = new SiswaAdapter(dataList, this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
+        //membuat recyclerview dengan layout default
+        recyclerView.setLayoutManager(layoutManager);
+        //menghubungkan adapter dengan recyclerview
+        recyclerView.setAdapter(adapter);
     }
 }
